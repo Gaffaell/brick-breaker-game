@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/gian/JavaFX/openjfx-25.0.1_linux-x64_bin-sdk/javafx-sdk-25.0.1/lib/javafx.base.jar",
+        "/home/gian/JavaFX/openjfx-25.0.1_linux-x64_bin-sdk/javafx-sdk-25.0.1/lib/jfx.incubator.richtext.jar"
+    ]
+}
