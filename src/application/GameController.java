@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -21,6 +22,8 @@ import javafx.stage.Stage;
 
 public class GameController extends AnimationTimer implements Initializable { // Implements Initializable, loads when the scene is created
 
+    @FXML
+    private Rectangle mainBrick;
     @FXML
     private Button menuButton;
     @FXML
@@ -33,6 +36,10 @@ public class GameController extends AnimationTimer implements Initializable { //
     private Circle ball;
     @FXML
     private Rectangle brick;
+    @FXML
+    private javafx.scene.control.Label alertEnter;
+    @FXML
+    private javafx.scene.control.Label alertEscape;
     private TranslateTransition circleAnimation = new TranslateTransition();
     private CollisionDetection collisionDetection = new CollisionDetection();
 
@@ -61,6 +68,7 @@ public class GameController extends AnimationTimer implements Initializable { //
 
     }
 
+    // ------------- method from AnimationTimer -------------
     @Override
     public void handle(long now) {
         
@@ -72,23 +80,56 @@ public class GameController extends AnimationTimer implements Initializable { //
         // Game loop logic goes here
         
         if (collisionDetection.isColliding(ball, brick) == true) {
+            // verification is the collision is being detected
 
             // Handle collision response
+            /* 
             System.out.println("Collision detected!");
             brick.setFill(Color.RED);
             ball.setFill(Color.GREEN);
+            */
             
         } else {
-            
+            /* 
             brick.setFill(Color.BLUE);
             ball.setFill(Color.BLUE);
             System.out.println("No collision detected!");
-
+            */
             
         }
-        
     }
 
+    // ------------- method to handle key preess -------------
 
+    public void moveMainBrick(KeyEvent event) {
+
+        System.out.println("Key pressed: " + event.getCode().toString());
+        
+        switch (event.getCode()) {
+            case LEFT:
+                mainBrick.setTranslateX(mainBrick.getTranslateX() - 10);
+                break;
+
+            case RIGHT:
+                mainBrick.setTranslateX(mainBrick.getTranslateX() + 10);
+                break;
+        
+            case ESCAPE:
+                menuButton.setVisible(true);
+                alertEnter.setVisible(true);
+                alertEscape.setVisible(false);
+                break;
+
+            case ENTER:
+                menuButton.setVisible(false);
+                alertEnter.setVisible(false);
+                alertEscape.setVisible(true);
+                break;
+
+            default:
+                break;
+        }
+    }
+    
 }
 
