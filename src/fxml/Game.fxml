@@ -14,13 +14,15 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="menuButton" layoutX="422.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="43.0" prefWidth="164.0" text="Back to menu">
+      <Button fx:id="menuButton" layoutX="422.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="43.0" prefWidth="164.0" text="Back to menu" visible="false">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Circle fx:id="ball" fill="DODGERBLUE" layoutX="300.0" layoutY="324.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="259.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" width="83.0" />
+      <Circle fx:id="ball" fill="DODGERBLUE" layoutX="302.0" layoutY="314.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="mainBrick" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" focusTraversable="true" height="20.0" layoutX="260.0" layoutY="324.0" onKeyPressed="#moveMainBrick" stroke="BLACK" strokeType="INSIDE" width="83.0" />
       <Rectangle fx:id="brick" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="260.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" width="83.0" />
+      <Label fx:id="alertEscape" layoutX="14.0" layoutY="12.0" text="Press ESC to go back to menu" />
+      <Label fx:id="alertEnter" layoutX="14.0" layoutY="12.0" text="Press ENTER to hide this content" visible="false" />
    </children>
 </AnchorPane>
