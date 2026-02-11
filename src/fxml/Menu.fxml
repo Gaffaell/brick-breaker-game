@@ -12,17 +12,17 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="startGame" layoutX="134.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchToGameScene" text="Start">
+      <Button fx:id="startGame" layoutX="190.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchToGameScene" text="Start">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="exitGame" layoutX="401.0" layoutY="187.0" mnemonicParsing="false" onAction="#exitGame" text="Exit">
+      <Button fx:id="exitGame" layoutX="340.0" layoutY="187.0" mnemonicParsing="false" onAction="#exitGame" text="Exit">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="scoreGame" layoutX="261.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchToScoreScene" text="Score">
+      <Button fx:id="scoreGame" disable="true" layoutX="261.0" layoutY="343.0" mnemonicParsing="false" onAction="#switchToScoreScene" text="Score" visible="false">
          <font>
             <Font size="20.0" />
          </font>
