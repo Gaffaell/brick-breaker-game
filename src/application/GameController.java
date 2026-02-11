@@ -70,6 +70,9 @@ public class GameController extends AnimationTimer implements Initializable { //
   private Label alertEscape;
   @FXML
   private AnchorPane gamePane;
+  @FXML
+  private Label score;
+  private int scoreCount;
   private TranslateTransition circleAnimation = new TranslateTransition();
   private CollisionDetection collisionDetection = new CollisionDetection();
   private static final double BALL_Y_MOVE = -600;
@@ -107,6 +110,7 @@ public class GameController extends AnimationTimer implements Initializable { //
   public void handle(long now) {
 
     doHandle();
+    score.setText(String.valueOf(scoreCount));
 
   }
 
@@ -119,7 +123,6 @@ public class GameController extends AnimationTimer implements Initializable { //
 
       // Handle collision response
 
-      System.out.println("Collision detected!");
       circleAnimation.stop();
       circleAnimation.setByY(BALL_Y_MOVE);
       circleAnimation.setByX(circleAnimation.getByX() * -1);
@@ -138,6 +141,7 @@ public class GameController extends AnimationTimer implements Initializable { //
             circleAnimation.setByY(BALL_Y_MOVE * -1);
             circleAnimation.setByX(circleAnimation.getByX() * -1);
             circleAnimation.play();
+            scoreCount++;
             brickList.remove(brick);
             gamePane.getChildren().remove(brick);
             break;
@@ -147,6 +151,7 @@ public class GameController extends AnimationTimer implements Initializable { //
             circleAnimation.setByY(BALL_Y_MOVE);
             circleAnimation.setByX(circleAnimation.getByX() * -1);
             circleAnimation.play();
+            scoreCount++;
             brickList.remove(brick);
             gamePane.getChildren().remove(brick);
             break;
@@ -156,6 +161,7 @@ public class GameController extends AnimationTimer implements Initializable { //
             circleAnimation.setByY(circleAnimation.getByY());
             circleAnimation.setByX((circleAnimation.getByX() * -1));
             circleAnimation.play();
+            scoreCount++;
             brickList.remove(brick);
             gamePane.getChildren().remove(brick);
             break;
@@ -165,6 +171,7 @@ public class GameController extends AnimationTimer implements Initializable { //
             circleAnimation.setByY(circleAnimation.getByY());
             circleAnimation.setByX((circleAnimation.getByX() * -1));
             circleAnimation.play();
+            scoreCount++;
             brickList.remove(brick);
             gamePane.getChildren().remove(brick);
             break;
