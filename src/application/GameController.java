@@ -83,7 +83,7 @@ public class GameController extends AnimationTimer implements Initializable { //
     // Create and start the animation when the scene loads
     circleAnimation.setNode(ball);
     circleAnimation.setByY(BALL_Y_MOVE);
-    circleAnimation.setByX(100);
+    circleAnimation.setByX(100); // Initial speed
     circleAnimation.setDuration(Duration.millis(2000));
     circleAnimation.setCycleCount(TranslateTransition.INDEFINITE);
     circleAnimation.play();
@@ -125,7 +125,7 @@ public class GameController extends AnimationTimer implements Initializable { //
 
       circleAnimation.stop();
       circleAnimation.setByY(BALL_Y_MOVE);
-      circleAnimation.setByX(circleAnimation.getByX() * -1);
+      ball.setCenterY(ball.getCenterY() - 5);
       circleAnimation.play();
 
     }
@@ -139,7 +139,7 @@ public class GameController extends AnimationTimer implements Initializable { //
           case "BOTTOM":
             circleAnimation.stop();
             circleAnimation.setByY(BALL_Y_MOVE * -1);
-            circleAnimation.setByX(circleAnimation.getByX() * -1);
+            ball.setCenterY(ball.getCenterY() + 5);
             circleAnimation.play();
             scoreCount++;
             brickList.remove(brick);
@@ -149,7 +149,7 @@ public class GameController extends AnimationTimer implements Initializable { //
           case "TOP":
             circleAnimation.stop();
             circleAnimation.setByY(BALL_Y_MOVE);
-            circleAnimation.setByX(circleAnimation.getByX() * -1);
+            ball.setCenterY(ball.getCenterY() - 5);
             circleAnimation.play();
             scoreCount++;
             brickList.remove(brick);
@@ -159,7 +159,7 @@ public class GameController extends AnimationTimer implements Initializable { //
           case "LEFT":
             circleAnimation.stop();
             circleAnimation.setByY(circleAnimation.getByY());
-            circleAnimation.setByX((circleAnimation.getByX() * -1));
+            ball.setCenterX(ball.getCenterX() - 5);
             circleAnimation.play();
             scoreCount++;
             brickList.remove(brick);
@@ -169,7 +169,7 @@ public class GameController extends AnimationTimer implements Initializable { //
           case "RIGHT":
             circleAnimation.stop();
             circleAnimation.setByY(circleAnimation.getByY());
-            circleAnimation.setByX((circleAnimation.getByX() * -1));
+            ball.setCenterX(ball.getCenterX() + 5);
             circleAnimation.play();
             scoreCount++;
             brickList.remove(brick);
@@ -188,18 +188,20 @@ public class GameController extends AnimationTimer implements Initializable { //
         circleAnimation.stop();
         circleAnimation.setByY(circleAnimation.getByY());
         circleAnimation.setByX((circleAnimation.getByX() * -1) + 100);
+        ball.setCenterX(ball.getCenterX() + 5);
         circleAnimation.play();
         break;
       case "RIGHT":
         circleAnimation.stop();
         circleAnimation.setByY(circleAnimation.getByY());
         circleAnimation.setByX((circleAnimation.getByX() * -1) - 100);
+        ball.setCenterX(ball.getCenterX() - 5);
         circleAnimation.play();
         break;
       case "TOP":
         circleAnimation.stop();
         circleAnimation.setByY(BALL_Y_MOVE * -1);
-        circleAnimation.setByX(circleAnimation.getByX() * -1);
+        ball.setCenterY(ball.getCenterY() + 5);
         circleAnimation.play();
         break;
       case "BOTTOM":
