@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
+import java.util.Random;
 
 import javafx.animation.AnimationTimer;
 import javafx.animation.TranslateTransition;
@@ -77,13 +78,14 @@ public class GameController extends AnimationTimer implements Initializable { //
   private CollisionDetection collisionDetection = new CollisionDetection();
   private static final double BALL_Y_MOVE = -600;
   private LinkedList<Rectangle> brickList = new LinkedList<>();
+  private Random random = new Random();
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     // Create and start the animation when the scene loads
     circleAnimation.setNode(ball);
     circleAnimation.setByY(BALL_Y_MOVE);
-    circleAnimation.setByX(100); // Initial speed
+    circleAnimation.setByX(random.nextInt(400)); // Initial speed
     circleAnimation.setDuration(Duration.millis(2000));
     circleAnimation.setCycleCount(TranslateTransition.INDEFINITE);
     circleAnimation.play();
