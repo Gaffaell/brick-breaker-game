@@ -1,4 +1,4 @@
-package application;
+package brickbreakergame;
 
 import javafx.geometry.Bounds;
 import javafx.scene.layout.AnchorPane;

@@ -1,9 +1,10 @@
-package application;
+package brickbreakergame;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
+
 import java.util.Random;
 
 import javafx.animation.AnimationTimer;
@@ -19,7 +20,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -100,8 +100,10 @@ public class GameController extends AnimationTimer implements Initializable { //
     root = FXMLLoader.load(getClass().getResource("/fxml/Menu.fxml")); // Loads the Game FXML file
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // Gets the current stage
     scene = new Scene(root);
-    scene.getStylesheets().add(getClass().getResource("/style/Menu.css").toExternalForm()); // Adds the CSS stylesheet
-                                                                                            // to the scene
+    scene.getStylesheets().add(getClass().getResource("/style/Menu.css").toExternalForm()); // Adds the
+                                                                                            // CSS
+                                                                                            // stylesheet
+    // to the scene
     stage.setScene(scene); // Sets the new scene on the stage
     stage.show();
 
