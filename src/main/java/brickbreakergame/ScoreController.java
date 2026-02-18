@@ -1,4 +1,4 @@
-package application;
+package brickbreakergame;
 
 import java.io.IOException;
 
@@ -24,8 +24,10 @@ public class ScoreController {
     root = FXMLLoader.load(getClass().getResource("/fxml/Menu.fxml")); // Loads the Game FXML file
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // Gets the current stage
     scene = new Scene(root);
-    scene.getStylesheets().add(getClass().getResource("/style/Menu.css").toExternalForm()); // Adds the CSS stylesheet
-                                                                                            // to the scene
+    scene.getStylesheets().add(getClass().getResource("/style/Menu.css").toExternalForm()); // Adds the
+                                                                                            // CSS
+                                                                                            // stylesheet
+    // to the scene
     stage.setScene(scene); // Sets the new scene on the stage
     stage.show();
 

@@ -1,4 +1,4 @@
-package application;
+package brickbreakergame;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +18,10 @@ public class Main extends Application {
   public void start(Stage stage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("/fxml/Menu.fxml")); // Loads the FXML file
     Scene scene = new Scene(root); // Creates a new scene with the loaded FXML
-    scene.getStylesheets().add(getClass().getResource("/style/Menu.css").toExternalForm()); // Adds the CSS stylesheet
-                                                                                            // to the scene
+    scene.getStylesheets().add(getClass().getResource("/style/Menu.css").toExternalForm()); // Adds the
+                                                                                            // CSS
+                                                                                            // stylesheet
+    // to the scene
 
     stage.setOnCloseRequest(event -> {
       event.consume();
